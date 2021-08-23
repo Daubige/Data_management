@@ -1,0 +1,25 @@
+import pandas as pd
+from pathlib import Path
+import os.path
+import shutil
+
+# CREATION DU CSV RESULT
+
+trial_path = "N:\\2021\\MONS\\ALPHI\\Ble\\149865_PHENOHD"
+trial_path = Path(trial_path)
+print(trial_path)
+
+for Date2 in trial_path.rglob("Session 2021*\l2"):
+    print(str(Date2))
+
+
+
+    try:
+        shutil.rmtree(Date2)
+    except OSError as e:
+        print(e)
+    else:
+        print("File data is deleted successfully")
+
+
+print("fin suppression l2")
